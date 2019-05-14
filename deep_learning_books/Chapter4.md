@@ -13,8 +13,7 @@ Very small value will be stored as zero in computer
 
 
 
-
-###Condition number
+#### Condition number
 
 For a $n \times n $ matrix $A$, if $A$ has an eigenvalue decomposition with eigenvalue $\{\lambda_i, \lambda_2, \dots, \lambda_n\}$, its condition number is 
 $$
