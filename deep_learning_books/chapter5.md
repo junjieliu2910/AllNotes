@@ -288,3 +288,37 @@ Read this [post](https://zhuanlan.zhihu.com/p/26614750)
 
 
 >Ignore the mathematical derivation here, I think I need to learn a statistic course to better  understand these related materials. So for the first reading pass the book, I choose to jump directly to Part II of the book. Complete this part when I reading the book the second time. 
+
+
+### 5.5.1 Conditional Log-likelihood and Mean Squared Error
+This is the basis for most supervised learning algorithms. If $X$ is all the input and $Y$ is all the labels, then the conditional maximum likelihood estimator is:
+$$
+\theta_{ML} = \arg \max_{\theta}P(Y|X;\theta)
+$$
+
+If the examples are assumed to be i.i.d. Then this can be decomposed into
+$$
+\theta_{ML} =\arg\max_{\theta}\sum_{i=1}^mP(y^{(i)} | x^{(i)};\theta)
+$$
+
+### 5.5.2 Properties of Maximum Likelihood 
+
+Maximum likelihood estimator is the best estimator asymptotically.
+
+Under following conditions, the maximum likelihood estimator has the property of consistency
+* The true distribution $p_{data}$ must lie within the model family $p_{model}(\cdot|\theta)$ 
+* The true distribution $p_{data}$$ must corresponding to exactly one value of $\theta$
+
+
+
+## 5.6 Bayes Statistics
+> 5.5 and 5.6 illustrate the basic ideas and the main difference of frequentist and bayes statistics. Up to the first pass reading, I am still quite comfused about these materials. 
+
+
+
+### 5.6.1 Maximum A Posteriori(MAP) Estimation 
+
+
+
+## 5.7 Supervised Learning Algorithms
+
