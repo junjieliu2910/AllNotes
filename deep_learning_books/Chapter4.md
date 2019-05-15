@@ -13,7 +13,7 @@ Very small value will be stored as zero in computer
 
 
 
-#### Condition number
+### Condition number
 
 For a $n \times n $ matrix $A$, if $A$ has an eigenvalue decomposition with eigenvalue $\{\lambda_i, \lambda_2, \dots, \lambda_n\}$, its condition number is 
 $$
@@ -23,6 +23,8 @@ $$
 
 
 ## 4.3 Gradient-Based Optimization 
+
+### Overview
 
 #### Gradient Descent:
 
@@ -99,9 +101,9 @@ Our objective is usually minimize $f(x)$ by gradient descent, then
 
 * if $H$ is positive definite, the optimal $\epsilon$ is  
 
-* $$
-  \epsilon = \frac{g\top g}{g\top Hg}
-  $$
+$$
+\epsilon = \frac{g\top g}{g\top Hg}
+$$
 
 
 
@@ -148,7 +150,7 @@ $$
 
 ## 4.4 Constrained Optimization
 
-#### Lagrangian multiplier and KKT approach
+### Lagrangian multiplier and KKT approach
 
 Convert constrained optimization to a set of linear equation system
 

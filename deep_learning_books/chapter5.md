@@ -8,7 +8,9 @@ Machine learning is a form of **applied statistics** that with increased emphasi
 
 ## 5.1 Learning Algorithm 
 
-### Definition of learning algorithm 
+### Overview
+
+#### Definition of learning algorithm 
 
 A computer program is said to learn from experience E with respect to some classes of T and performance P, if its performance at tasks in T, as measured by P, improves with experience E.
 
@@ -52,6 +54,8 @@ Refer to the book
 
 
 ## 5.2 Capacity, Overfitting and Underfitting
+
+### Overview
 
 #### Train error and test error 
 
