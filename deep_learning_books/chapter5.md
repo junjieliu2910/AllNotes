@@ -318,6 +318,11 @@ Under following conditions, the maximum likelihood estimator has the property of
 ## 5.6 Bayes Statistics
 > 5.5 and 5.6 illustrate the basic ideas and the main difference of frequentist and bayes statistics. Up to the first pass reading, I am still quite comfused about these materials. 
 
+**Frequentist Statistics**
+
+* $\theta$ is fixed but unknown, use some kinds of estimators to estimate the true underlying value $\theta$. The estimator is a function of the training data.
+* The estimator $\hat{\theta}$ is the random variable
+
 
 
 ### 5.6.1 Maximum A Posteriori(MAP) Estimation 
@@ -326,3 +331,4 @@ Under following conditions, the maximum likelihood estimator has the property of
 
 ## 5.7 Supervised Learning Algorithms
 
+### 5.7.1 
