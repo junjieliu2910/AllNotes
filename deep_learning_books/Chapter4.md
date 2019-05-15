@@ -85,10 +85,12 @@ $$
 
 #### Find optimal learning rate with Hessian matrix
 
-Find the second-order Taylor approximation to a function $f(\mathbb{x}): R^n \to R$ around the point $x^{(0)}$ 
+Find the second-order Taylor approximation to a function $f(\mathbb{x}): R^n \to R$ around the point $x^{(0)}$.
+
 $$
 f(x) = f(x^{(0)}) + (x-x^{(0)})^\top g  + \frac{1}{2} (x-x^{(0)})^\top H (x-x^{(0)})
 $$
+
 Where $g$ is the gradient and $H$ is the Hessian.  Since the gradient descent usually take a relatively small step around $x^{(0)}$ , then the value after gradient descent step is
 $$
 f(x^{(0)}-\epsilon g) = f(x^{(0)})  -\epsilon g\top g  + \frac{1}{2} \epsilon^2 g\top H g
