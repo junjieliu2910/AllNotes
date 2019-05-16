@@ -311,7 +311,7 @@ Maximum likelihood estimator is the best estimator asymptotically.
 
 Under following conditions, the maximum likelihood estimator has the property of consistency
 * The true distribution $p_{data}$ must lie within the model family $p_{model}(\cdot|\theta)$ 
-* The true distribution $p_{data}$$ must corresponding to exactly one value of $\theta$
+* The true distribution $p_{data}$ must corresponding to exactly one value of $\theta$
 
 
 
@@ -320,15 +320,115 @@ Under following conditions, the maximum likelihood estimator has the property of
 
 **Frequentist Statistics**
 
+* Use probability to present the times some events will appear given the total trials 
+
 * $\theta$ is fixed but unknown, use some kinds of estimators to estimate the true underlying value $\theta$. The estimator is a function of the training data.
-* The estimator $\hat{\theta}$ is the random variable
+* The estimator $\hat{\theta}_m$ is the random variable, the data observed is also a random variable $x$ 
+
+**Bayes Statistics**
+
+* Use a *priori* that is subjective. 
+  * Priori increase the bias but reduce the variance
+
+* Use probability to reflect the degree of certainty of states of knowledge
+
+* The dataset observed is fixed and certain
+* The underlying true parameter $\theta$ is unknown and is a random variable
+
+
+
+A good [reading](<https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading20.pdf>) from MIT about the difference between frequentist and Bayes statistics
 
 
 
 ### 5.6.1 Maximum A Posteriori(MAP) Estimation 
 
+> Confused for the first pass reading , 
+
 
 
 ## 5.7 Supervised Learning Algorithms
 
-### 5.7.1 
+### 5.7.1 Probabilistic Supervised Learning 
+
+Use maximum likelihood estimation to solve the supervised learning problems.
+
+* Linear regression (Check 5.5.1. Linear regression from the perspective of maximum likelihood estimation)
+* Logistic regression
+
+
+
+### 5.7.2 Support Vector Machine
+
+> The illustration in this book is not so good. Just check the corresponding part of the book(统计学习方法，李航)
+
+Support vector machine is a binary classifier 
+
+* **Kernel method** or Kernel machine
+
+
+
+### 5.7.3 Other Simple Supervised Learning Algorithms
+
+#### K-nearest neighbors (KNN)
+
+* K-nearest neighbors is a non-probabilistic supervised learning methods 
+* KNN have quite high capacity 
+* KNN cannot learning the importance of difference features 
+
+
+
+#### Decision Tree
+
+* Sub-divide space into non-overlapping regions 
+
+
+
+## 5.8 Unsupervised Learning Algorithms 
+
+> Here this book introduces two traditional unsupervised learning algorithm. 李航机器学习方法 is a better book for further understand.
+
+
+
+### 5.8.1 Principal Components Analysis
+
+### 5.8.2 K-mean Clustering
+
+
+
+
+
+## 5.9 Stochastic Gradient Descent
+
+**Stochastic Gradient Descent**
+
+* Use a estimated gradient to conduct gradient descent
+* Can train non-linear models on large amount of data 
+
+
+
+**Cost function**
+
+For a training set $\{x^{(1)}, x^{(2)}, \cdots, x^{(m)} \}$ with size $m$, the cost function and the gradient is 
+$$
+J(\theta) = \mathbb{E}_{\mathbf{x}, y\sim \hat{p}_{data}}L(x, y, \theta) = \frac{1}{m}\sum_{i=1}^mL(x^{(i)}, y^{(i)}, \theta) \\
+\nabla_\theta J(\theta) = \frac{1}{m}\sum_{i=1}^m\nabla_\theta L(x^{(i)}, y^{(i)}, \theta)
+$$
+$L$ is the per-example loss. For negative-log likelihood loss
+$$
+L(x, y, \theta) = -\log P(y|\mathbb{x}; \theta)
+$$
+Calculating the average loss over the whole dataset is computation expensive, so a estimated average over a small subset $\{x^{(1)}, x^{(2)}, \cdots, x^{(m')} \}$  with size $m'$ is used. The estimated gradient is 
+$$
+\hat{g} = \frac{1}{m'}\sum_{i=1}^{m'}\nabla_\theta L(x^{(i)}, y^{(i)}, \theta)
+$$
+
+
+
+
+## 5.10 Building a Machine Learning Algorithm
+
+
+
+
+
