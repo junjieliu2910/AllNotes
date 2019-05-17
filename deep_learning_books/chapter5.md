@@ -460,3 +460,43 @@ $$
 
 
 ## 5.11 Challenges Motivating Deep Learning
+
+**The problem of high dimensionality**
+
+The challenge faced by machine learning or deep learning is actually caused by the high dimensionality
+
+### 5.11.1 The Curse of Dimensionality 
+
+Possible settings grows exponentially with data dimension.
+
+Machine learning problems becomes exceedingly difficult when the number of dimensions in the data is high. This is called the curse of **dimensionality**
+
+### 5.11.2 Local Constancy and Smoothness Regularization
+
+> Confused about this chapter for first pass reading 
+
+In order to generalize well, machine learning algorithms need to be guided by prior beliefs about what kind of function they should learning.(Like choose to use CNN for image classification and then design the architecture of CNN, these are the prior beliefs)
+
+**Prior beliefs in machine learning**
+
+* Explicitly or implicitly priori beliefs
+* **Smoothness prior** or **local constancy prior** is the most widely used implicit prior
+
+
+
+
+
+### 5.11.3 Manifold Learning
+
+> A good [post](https://www.zhihu.com/question/24015486) about manifold learning
+
+**Basic Assumption**
+
+* Redundancy in high dimension data
+* Data can be regarded as lying in a low dimensional manifold 
+* A mapping from low dimensional manifold to high original data dimension exists 
+
+
+
+![manifold learning](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\5_3.jpg)
+
