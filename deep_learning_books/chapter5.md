@@ -425,10 +425,38 @@ $$
 
 
 
-
 ## 5.10 Building a Machine Learning Algorithm
 
+**Components of a machine learning algorithm**
+
+* A specification of a dataset
+* A cost function
+* An optimization procedure
+* A model
+
+
+
+**Dataset**
+
+* Under most situation, the study of machine learning is based on the assumption that the dataset is generated properly
+
+
+
+**Cost function**
+
+* If Cost function allows close-form optimization, 
+* If cost function don't have closed-form optimization
+  * Iterative optimization methods like gradient descent
+* If the cost function cannot be evaluate for computational reasons, as long as its gradient can be estimated, it can be optimized
+
+
+
+**Optimization procedure**
+
+* If a machine learning algorithm seems quite unique, it can be understood as using a special-case optimizer
 
 
 
 
+
+## 5.11 Challenges Motivating Deep Learning
