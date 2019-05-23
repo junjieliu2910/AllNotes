@@ -61,7 +61,11 @@ Where $L(\mathbb(x), y, \theta)$ is example-wise loss function
 
 
 
-> 
+> 同样的一个output 不同的角度去理解或者解释就会对应不一样的cost function。 
+>
+> 比如，如果task是一个Binary classification， Neural network的输出是是个scalar，那么这个scalar可以理解为
+
+
 
 #### 6.2.1.1 Learning Conditional Distributions with Maximum Likelihood
 
