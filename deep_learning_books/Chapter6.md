@@ -48,3 +48,20 @@ In order to use SGD for optimization, we first need to define the cost function 
 
 ### 6.2.1 Cost Functions 
 
+**Review**: The cost function is presented below:
+$$
+J(\theta) = \mathbb{E}_{\mathbf{x}, y\sim \hat{p}_{data}}L(\mathbf{x}, y, \theta) = \frac{1}{m}\sum_{i=1}^mL(\mathbb{x^{(i)}}, y^{(i)}, \theta)
+$$
+Where $L(\mathbb(x), y, \theta)$ is example-wise loss function 
+
+**Two kinds of interpretation about output**
+
+* The output reveal a ==conditional probability distribution $P(\mathbf{y} |\mathbb{x}; \theta)$==
+* The output gives a single conditional statistics
+
+
+
+> 
+
+#### 6.2.1.1 Learning Conditional Distributions with Maximum Likelihood
+
