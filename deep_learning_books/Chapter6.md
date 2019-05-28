@@ -341,3 +341,168 @@ A feedforward with single hidden layer is sufficient to represent any function b
 
 
 > 这一节后面的部分介绍了一个关于input $d$,  depth $l$ , number of unit $n$ 和number of linear regions carved out by this deep rectifier network的结论，但是我没看懂
+
+
+
+**Practical experience** 
+
+Tend to use deep model 
+
+* Greater depth does seem to result in better generalization for a wide variety of tasks 
+
+
+
+### 6.4.2 Other Architectural Considerations 
+
+* No need to have chain-based architecture 
+  * Can have skip connection or some other kinds of connections 
+* How to connect a pair of layers to each other 
+  * Feedforward neural network use a matrix $W$ 
+  * CNN use a sparse connection (Not fully connected) 
+
+
+
+
+
+## 6.5 Back-Propagation and Other Differentiation Algorithms 
+
+**Forward propagation**
+
+From the input $\mathbb{x}$ to get the output $y$ 
+
+
+
+**Back propagation**
+
+Compute the gradient 
+
+
+
+**Stochastic gradient descent** 
+
+Use the gradient to learning the parameters 
+
+
+
+**Why use back-propagation**
+
+* Compute the gradient of a complex function numerally is computation expensive 
+
+* Backprop use a simple and inexpensive procedure with additional storage cost 
+
+
+
+### 6.5.1 Computational Graphs 
+
+To precisely describe back-propagation algorithm, we need to have formal **computational graph** language 
+
+**Variable**
+
+The variable may be scalar, vector, matrix, tensor or even a variable of another type 
+
+**Operation**
+
+A operation is a simple function of one or more variable 
+
+
+
+Each node is a variable. One or several edges represent a operation 
+
+Then the neural network can be represented as a DAG 
+
+
+
+### 6.5.2 Chain Rule of Calculus 
+
+Omit
+
+
+
+###  6.5.3 Recursively Applying the Chain Rule to Obtain Backprop 
+
+> 实际上这一节就表达了一个想法，在backpop的时候有两种选择
+>
+> 1.  不存储中间节点的Jacobian ，会有很多重复计算
+> 2. 存储中间节点的Jacobian和对应的hidden state output， 会省去很多重复计算，但是有额外的存储开销
+
+
+
+### 6.5.4 Back_propagation Computation in Fully-Connected MLP 
+
+Omit 
+
+
+
+### 6.5.5 Symbol-to-Symbol Derivative 
+
+**Symbolic and numeric**
+
+Symbol $\implies$ variable that does not have specific value, like $a, b, x, y$ 
+
+Numeric $\implies$ variable with specific value, like $x = [1, 2, 3]^\top$ 
+
+
+
+**Symbol-to-number differentiation** 
+
+Take a computational graph and a input,  return a set of numerical value describing the gradient at those input values 
+
+* used by Torch and caffe 
+
+
+
+**Symbol-to-Symbol defferentiation**
+
+Take a computational graph and add additional nodes to the graph that provide a symbolic description of the desired derivatives 
+
+* used by Theano and Tensorflow 
+
+
+
+### 6.5.6 General Back-propagation 
+
+Omit
+
+### 6.5.7 Example : Back-Propagation for MLP Training 
+
+Omit 
+
+
+
+### 6.5.8 Complication 
+
+Omit 
+
+
+
+### 6.5.9 Differentiation outside the Deep Learning Community 
+
+The back-propagation algorithm is a special case of a boarder class of techniques called **reverse mode accumulation** 
+
+
+
+### 6.5.10 Higher-order Derivatives 
+
+**Krylov methods**
+
+Iterative approximation algorithms to compute the Hessian matrix 
+
+
+
+> Higher-order derivatives 到底在训练过程中有什么用呢？ 
+
+
+
+
+
+## 6.6 Historical Notes 
+
+现在在deep learning 中应用很多的techniques其实上世纪80-90年代就提出来了，这一波机器学习或者说人工只能的复兴主要原因有两个
+
+1. Larger dataset 
+2. More powerful computer 
+
+算法上最大的提升就是用 piece-wise linear activation function , 也就是ReLU
+
+
+
