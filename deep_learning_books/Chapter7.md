@@ -385,3 +385,93 @@ E.g.  If the dropout probability of a layer is $0.5$ , then the weights of this 
 
 
 
+**Extension to dropout**
+* Fast dropout 
+	* Reduce the stochasticity 
+	* Faster convergence time 
+	* Indicate stochasticity is not necessary for generalization
+* DropConnect
+	* Dropout is drop hidden unit 
+	* DropConnect is drop the connection between each unit (More like sparse representation)
+
+* Use $\mu \sim \mathcal{N}(1, I)$ to replace $\mu \in \{0, 1\}$ . Use a real number mask instead of binary mask 
+
+
+
+**Why Dropout can regularize the neural network**
+
+* Dropout boosting revel that the stochasticity is not sufficient
+* A large potion of the power of dropout arises from the fast that the masking noise is applied to the hidden units 
+  * Random drop force the hidden unit to be replaceable and learn more distinct feature from the training examples 
+
+
+
+**Multiplicative and additive noise**
+
+* If only additive noise is added, the hidden state tends to be very large to make the noise insignificant 
+* Multiplicative noise(Dropout) do not have this problem
+* Batch normalization has both multiplicative and additive noise
+
+
+
+
+
+
+
+## 7.13 Adversarial Training
+
+**Adversarial Example**
+
+* We can intentionally construct a input $x'$ near a data point $x$ that the model output is very different at $x'$ 
+
+
+
+**Adversarial Training**
+
+* We can use adversarial examples to train the model to regularize 
+
+
+
+
+
+**Reason of Adversarial Examples**
+
+* Excessive linearity
+  * Neural network contains many linear part
+  * High dimension data 
+  * Small change will be accumulated when use linear transform with high dimension data
+
+
+
+**Virtual adversarial examples**
+
+> 这里没看懂
+
+
+
+
+
+## 7.14 Tangent Distance, Tangent Prop, and Manifold Tangent Classifier 
+
+**Assumption**
+
+Many machine learning algorithm aim to overcome the curse of dimensionality by assuming that the data lies near a low-dimensional manifold. (Refer to section 5.11.3 Manifold learning)
+
+
+
+**Tangent Distance Algorithm**
+
+* Based on Manifold assumption
+* Non-parametric 
+* Calculated the tangent distance to classify 
+
+
+
+**Tangent prop algorithm** 
+
+* Add extra penalty by the invariance on the manifold locally 
+* Closely related to dataset augmentation 
+* Related to Double Back prop
+
+![Illustration of Tangent pop algorithm](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\7_3.PNG)
+
