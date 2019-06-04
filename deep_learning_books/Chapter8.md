@@ -193,4 +193,27 @@ However, if the Hessian matrix $H$ at that point is ill-conditioning, $\Delta$ m
 
 ## 8.2.3 Plateaus, Saddle Points and Other Flat Regions
 
- 
+>  这一个section是平坦区域， 下一section是变化很快的区域
+
+
+
+**Plateaus**
+
+* Gradient is small or even tends to zero
+* Slow learning progress
+
+
+
+**Saddle points**
+
+* More common for complex model than local minima 
+* Gradient descent empirically seems to be able to escape saddle point in many case 
+* However, the true effect of saddle point to first order learning algorithm is somehow unclear 
+* Saddle point is harmful to second-order methods like Newton's method, which find the critical points 
+  * Second-order methods remain difficult to scale to large neural networks 
+  * Hessian matrix $H$ is quite computation espensive 
+
+
+
+### 8.2.4 Cliffs and Exploding Gradients 
+
