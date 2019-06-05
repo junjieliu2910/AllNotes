@@ -217,3 +217,236 @@ However, if the Hessian matrix $H$ at that point is ill-conditioning, $\Delta$ m
 
 ### 8.2.4 Cliffs and Exploding Gradients 
 
+![Cliffs](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_1.PNG)
+
+* Gradient only reveal the information about optimal descent direction within an infinitesimal region
+* The effect of large jump caused by cliff is somehow unknown  
+
+
+
+
+
+### 8.2.5 Long-Term Dependencies
+
+* Models with shared parameters 
+
+* Gradient explosion and vanish in RNN 
+
+
+
+### 8.2.6 Inexact Gradients 
+
+* Biased estimation of gradient 
+  * Caused by SGD used in practice 
+* In some cases, the objective function is actually intractable
+
+> 书中也没有举例那些objective function 是intractable的
+
+
+
+### 8.2.7 Poor Correspondence between Local and Global Structure 
+
+![](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_2.PNG)
+
+* Sensitive to initial value of parameter
+
+
+
+> 目前没有解决办法，
+
+
+
+### 8.2.8 Theoretical Limits of Optimization 
+
+> 一句话， 理论研究什么都没研究出来
+
+
+
+
+
+## 8.3 Basic Algorithms 
+
+### 8.3.1 Stochastic Gradient Descent 
+
+![SGD](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_3.PNG)
+
+
+
+**Key points**
+
+* Learn rate is a crucial parameter for SGD 
+* Learn rate should decrease over time 
+* How to choose a proper learning rate is an art than science 
+
+
+
+> Learning rate的选择很重要，但是怎么选是个玄学
+
+
+
+### 8.3.2 Momentum
+
+![SGD with Momentum](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_4.PNG)
+
+**Key points**
+
+* Aims to solve two problems
+  * Poor conditioning of Hessian matrix
+  * Variance in stochastic gradient estimation
+
+
+
+> * 如果gradient 一直保持一个方向， Momentum就是一个等比数列的和。 Step size就会比不用momentum大很多
+> * 如果gradient不稳定一直在变换方向， 用Momentum的step size就比不用的小
+>
+> 用Momentum确实有帮助，但是也一定找到Momentum 效果比原来的SGD 更差的情况
+
+
+
+### 8.3.3 Nesterov Momentum 
+
+![](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_5.PNG)
+
+**Key points**
+
+* Almost the same to momentum
+* Only difference is where the gradient is computed
+* Faster than Momentum for poor condition
+
+
+
+> 简单来说就是在计算Gradient 的时候提前走了 $\alpha v$ ,
+>
+> 这里有两个帖子写的比较好[比Momentum更快：揭开Nesterov Accelerated Gradient的真面目](<https://zhuanlan.zhihu.com/p/22810533>)
+>
+> [路遥知马力——Momentum](<https://zhuanlan.zhihu.com/p/21486826>)
+
+
+
+## 8.4 Parameter Initialization Strategies 
+
+**Key points**
+
+* When training deep learning models, the choice of initial parameter can determine whether the model converges at all
+
+* We known few about how the initialize the parameter 
+
+  
+
+**Break symmetry**
+
+* If two hidden units has same activation and same inputs, then these units mush have different initial parameters 
+  * May help to make sure no input patterns are lose in the null space of forward progapation and no gradient patterns are lost in the null space of back-propagation 
+
+> 这里关于null space的叙述没看懂
+
+
+
+**Typical initialization strategies**
+
+* Random initialization
+
+* Orthogonal initialization 
+
+* Typically, the value of the parameter are drawn randomly from a Guassian or uniform distribution 
+
+  
+
+**Large or small initial value**
+
+* Large initial value
+  * Stronger symmetry breaking effect 
+  * Avoid losing information in feedforward and back propagation process
+  * Gradient exploding
+  * Saturation of activation function 
+  * Strong priori about interaction between units 
+
+
+
+
+
+**Optimization and Generalization**
+
+* Usually the final parameter value after the training is close to the initial value 
+  * Thus choosing a initial parameter $\theta_0$ is similar to imposing a a Gaussian prior $p(\theta)$ with mean $\theta_0$ 
+
+
+
+**Optimal Criteria for initialization**
+
+* There are many so-called optimal criteria 
+* These so-called optimal criteria often do not lead to optimal performance 
+
+
+
+> 简单来说，对于如何initialize value 了解很少
+
+
+
+## 8.5 Algorithms with Adaptive Learning Rates 
+
+Learning rate is the most difficult hyperparameter to choose for machine learning algorithm cause learning rate greatly affect the final performance 
+
+
+
+### 8.5.1 AdaGrad
+
+![AdaGrad](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_6.PNG)
+
+
+
+**Key points** 
+
+* Weight the learning rate by the second norm of all historical gradients
+
+* Designed for convex optimization 
+* Can overcome cliff and plateaus problem 
+
+
+
+### 8.5.2 RMSProp
+
+![RMSProp](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_7.PNG)
+
+
+
+**Key points**
+
+* Use exponential decaying gradient norm compared with AdaGrad
+
+
+
+**RMSProp with Nesterov momentum**
+
+![](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_8.PNG)
+
+**Key points**
+
+* Adding Nesterov momentum to origin RMSProp
+
+
+
+
+
+### 8.5.3 Adam 
+
+![Adam](C:\Users\eee\Documents\GitHub\AllNotes\deep_learning_books\images\8_9.PNG)
+
+**Key points**
+
+* Can be seen as a variants on the combination of RMSProp and momentum 
+* Machenism to correct biased estimation
+  * How ??????? 
+
+> 玄学， 怎么就能correct biased estimation了， 原理是什么？？？ 
+
+
+
+### 8.5.4 Choosing the  Right Optimization Algorithm
+
+> 同样是玄学
+
+
+
+## 8.6 Approximate Second-Order Methods 
+
