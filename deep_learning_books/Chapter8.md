@@ -450,3 +450,77 @@ Learning rate is the most difficult hyperparameter to choose for machine learnin
 
 ## 8.6 Approximate Second-Order Methods 
 
+In This section we discuss the application of **second-order methods to the training of deep neural networks** 
+
+
+
+## 8.6.1 Newton's Method
+
+Use second-order Taylor series expansion to approximate $J(\theta)$ new some point $\theta_0$ 
+$$
+J(\theta) \approx J(\theta_0) + (\theta-\theta_0)^\top\nabla_{\theta}J(\theta_0) + \frac{1}{2}(\theta-\theta_0)^\top H(\theta-\theta_0)
+$$
+Solve the critical point of this function, we obtain the newton parameter update rule:
+$$
+\theta^{\star} = \theta_0 - H^{-1}\nabla_{\theta}J(\theta_0)
+$$
+
+* This update can be conducted iteratively as long as the Hessian matrix $H$ is positive definite 
+
+* If the eigenvalue of $H$ are not all positive (Near a saddle point) 
+
+  * Regularize the Hessian 
+    $$
+    \theta^{\star} = \theta_0 - [H + \alpha I]^{-1}\nabla_{\theta}J(\theta_0)
+    $$
+
+The regularization of Hessian only works well when the negative eigenvalues are close to zero, otherwise Newton's method will be slow to converge than gradient descent.
+
+Meanwhile, the Hessian matrix and the inverse Hessian matrix is computational expensive 
+
+> 简单来说， 在训练Neural network的时候基本用不上， Convex optimization 会比较好用
+
+
+
+### 8.6.2 Conjugate Gradients 
+
+> 没看懂，就不总结了
+
+
+
+
+
+### 8.6.3 BFGS 
+
+> 一样没看懂， 不总结了
+
+
+
+
+
+## 8.7 Optimization Strategies and Meta-Algorithms 
+
+### 8.7.1 Batch Normalization 
+
+> Idea 很简单，但是为什么有好的效果书里面没有说的很清楚，看了几个[Post](<https://www.zhihu.com/question/38102762>) 也没有完全弄明白，可能要等之后看的时候在搞清楚了
+
+
+
+### 8.7.2 Coordinate Descent 
+
+* Optimize the parameter one coordinate at a time 
+
+
+
+> 感觉在deep learning 里面没什么应用
+
+
+
+### 8.7.3 Polyak Averaging
+
+> 没懂为什么会有用
+
+
+
+### 8.7.4 Supervised Pretraining
+
