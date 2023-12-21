@@ -8,4 +8,8 @@ Introduce three kinds of type deduction in cpp
 
 ## 1. Understand template type deduction 
 
-Consider a templete type deduction 
+Consider a templete type deduction for a function template 
+```cpp
+template<typename T>
+void f(ParamType x);
+```
